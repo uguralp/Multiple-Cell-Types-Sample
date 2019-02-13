@@ -66,14 +66,14 @@ class ProfileViewModelMessages: ProfileViewModelItem {
 
 class ProfileViewModel: NSObject  {
     var items = [ProfileViewModelItem]()
-    var myProfile = Profile(fullName: "Michael Jackson", image: UIImage(named: "MJ.jpg")!, info: "Hi everyone!", messages: [Message]())
+    var myProfile = Profile(fullName: "Michael Jackson", image: UIImage(named: "MJ.jpg")!, info: "Michael Joseph Jackson was an American singer, songwriter and dancer. Dubbed the King of Pop, he is regarded as one of the most significant cultural icons of the 20th century and one of the greatest entertainers of all time.", messages: [Message]())
     
     override init() {
         super.init()
         
         myProfile.addMessages()
         
-            let nameAndPicture = ProfileViewModelNameAndPicture(image: myProfile.image, name: "Michael Joseph Jackson was an American singer, songwriter and dancer. Dubbed the King of Pop, he is regarded as one of the most significant cultural icons of the 20th century and one of the greatest entertainers of all time.")
+            let nameAndPicture = ProfileViewModelNameAndPicture(image: myProfile.image, name: myProfile.fullName)
             items.append(nameAndPicture)
         
         let aboutItem = ProfileViewModelAbout(about: myProfile.info)
